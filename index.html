@@ -87,19 +87,6 @@
             color: var(--primary-dark);
         }
 
-        .logo-icon {
-            background: linear-gradient(135deg, var(--primary), var(--accent-gold));
-            width: 42px;
-            height: 42px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.4rem;
-            box-shadow: 0 6px 12px rgba(192,125,75,0.25);
-        }
-
         .logo-text {
             line-height: 1.2;
         }
@@ -178,7 +165,8 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(115deg, rgba(46,42,39,0.85) 0%, rgba(192,125,75,0.8) 100%), url('https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1920&auto=format') center/cover fixed;
+            background: linear-gradient(115deg, rgba(46,42,39,0.85) 0%, rgba(192,125,75,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1920&auto=format') center/cover fixed;
             min-height: 95vh;
             display: flex;
             align-items: center;
@@ -228,6 +216,11 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(192,125,75,0.4);
+        }
+
+        .btn-submit {
+            width: 100%;
+            justify-content: center;
         }
 
         /* Stats */
@@ -310,274 +303,55 @@
             margin-bottom: 1rem;
         }
 
-        /* Carousel */
         /* Carrossel refinado */
-.carousel-container {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-    background: #FEFAF6; /* fundo suave, sem bordas pretas */
-}
+        .carousel-container {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            background: #FEFAF6;
+        }
 
-.carousel-slides {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-.carousel-slide {
-    min-width: 100%;
-    position: relative;
-}
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
 
-.carousel-slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s;
-}
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
 
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-    padding: 2rem 2rem 1.5rem;
-    color: white;
-    text-align: left;
-}
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+            text-align: left;
+        }
 
-.carousel-caption h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
-}
+        .carousel-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
 
-.carousel-caption p {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
+        .carousel-caption p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
 
-.badge-cat {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    padding: 0.25rem 1rem;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    margin-top: 8px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(6px);
-    border: none;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background: var(--primary);
-    transform: translateY(-50%) scale(1.05);
-}
-
-.btn-prev { left: 20px; }
-.btn-next { right: 20px; }
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 1.5rem;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(192,125,75,0.4);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.dot.active {
-    width: 28px;
-    background: var(--primary);
-}
-
-/* Responsivo */
-@media (max-width: 880px) {
-    .carousel-slide img {
-        height: 350px;
-    }
-    .carousel-caption h3 {
-        font-size: 1.3rem;
-    }
-    .carousel-caption p {
-        font-size: 0.85rem;
-    }
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 580px) {
-    .carousel-slide img {
-        height: 280px;
-    }
-    .carousel-caption {
-        padding: 1rem;
-    }
-    .carousel-caption h3 {
-        font-size: 1rem;
-    }
-}/* Carrossel refinado */
-.carousel-container {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-    background: #FEFAF6; /* fundo suave, sem bordas pretas */
-}
-
-.carousel-slides {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.carousel-slide {
-    min-width: 100%;
-    position: relative;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s;
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-    padding: 2rem 2rem 1.5rem;
-    color: white;
-    text-align: left;
-}
-
-.carousel-caption h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
-}
-
-.carousel-caption p {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
-.badge-cat {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    padding: 0.25rem 1rem;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    margin-top: 8px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(6px);
-    border: none;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background: var(--primary);
-    transform: translateY(-50%) scale(1.05);
-}
-
-.btn-prev { left: 20px; }
-.btn-next { right: 20px; }
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 1.5rem;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(192,125,75,0.4);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.dot.active {
-    width: 28px;
-    background: var(--primary);
-}
-
-/* Responsivo */
-@media (max-width: 880px) {
-    .carousel-slide img {
-        height: 350px;
-    }
-    .carousel-caption h3 {
-        font-size: 1.3rem;
-    }
-    .carousel-caption p {
-        font-size: 0.85rem;
-    }
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 580px) {
-    .carousel-slide img {
-        height: 280px;
-    }
-    .carousel-caption {
-        padding: 1rem;
-    }
-    .carousel-caption h3 {
-        font-size: 1rem;
-    }
-}
         .badge-cat {
             display: inline-block;
             background: rgba(255,255,255,0.2);
@@ -592,16 +366,16 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.4);
             backdrop-filter: blur(6px);
             border: none;
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s;
             z-index: 10;
         }
 
@@ -626,12 +400,29 @@
             background: rgba(192,125,75,0.4);
             border-radius: 20px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.2s;
         }
 
         .dot.active {
             width: 28px;
             background: var(--primary);
+        }
+
+        @media (max-width: 880px) {
+            .carousel-slide img { height: 350px; }
+            .carousel-caption h3 { font-size: 1.3rem; }
+            .carousel-caption p { font-size: 0.85rem; }
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .carousel-slide img { height: 280px; }
+            .carousel-caption { padding: 1rem; }
+            .carousel-caption h3 { font-size: 1rem; }
         }
 
         /* Testimonials */
@@ -774,11 +565,6 @@
             box-shadow: 0 0 0 3px rgba(192,125,75,0.2);
         }
 
-        .btn-submit {
-            width: 100%;
-            justify-content: center;
-        }
-
         /* Footer */
         footer {
             background: var(--dark-bg);
@@ -880,9 +666,9 @@
 <header>
     <nav class="navbar">
         <a href="#home" class="logo">
-    <img src="Img/Projetos/logo.png" alt="Comstilo Móveis" style="height: 80px; width: auto; border-radius: 8px;">
-    <div class="logo-text">Comstilo<span>móveis sob medida</span></div>
-</a>
+            <img src="Img/Projetos/logo.png" alt="Comstilo Móveis" style="height: 80px; width: auto; border-radius: 8px;">
+            <div class="logo-text">Comstilo<span>móveis sob medida</span></div>
+        </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="nav-link">Início</a></li>
             <li><a href="#projetos" class="nav-link">Projetos</a></li>
@@ -897,9 +683,11 @@
 <main>
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Móveis que contam <strong>sua história</strong></h1>
-            <p>Design exclusivo, marcenaria de alta performance e acabamento premium. Transforme sua casa com móveis planejados em São Francisco do Sul - SC.</p>
-            <a href="https://wa.me/5547996767285?text=Olá!%20Quero%20móveis%20sob%20medida%20em%20São%20Francisco%20do%20Sul." target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+            <h1>Móveis sob medida para deixar sua casa <strong>do jeito que você sempre imaginou</strong></h1>
+            <p>Planejamos e fabricamos cozinhas, quartos, salas e home offices com marcenaria profissional, entrega no prazo e acabamento de alto padrão em São Francisco do Sul e região.</p>
+            <a href="https://wa.me/5547996767285?text=Olá!%20Quero%20móveis%20sob%20medida%20em%20São%20Francisco%20do%20Sul." target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Quero um orçamento gratuito
+            </a>
         </div>
     </section>
 
@@ -921,9 +709,21 @@
                 <p class="section-subtitle">Atendimento personalizado e móveis que valorizam cada ambiente</p>
             </div>
             <div class="services-grid">
-                <div class="service-card"><i class="fas fa-drafting-compass service-icon"></i><h3>Projeto 3D personalizado</h3><p>Cada móvel desenhado sob medida para sua rotina e estilo.</p></div>
-                <div class="service-card"><i class="fas fa-gem service-icon"></i><h3>Materiais nobres</h3><p>MDF premium, ferragens Blum e acabamento de alto padrão.</p></div>
-                <div class="service-card"><i class="fas fa-people-carry-box service-icon"></i><h3>Montagem especializada</h3><p>Instalação cuidadosa, limpeza e entrega no prazo.</p></div>
+                <div class="service-card">
+                    <i class="fas fa-drafting-compass service-icon"></i>
+                    <h3>Projeto 3D personalizado</h3>
+                    <p>Você visualiza o ambiente pronto antes da produção, ajustando medidas, cores e acabamentos até ficar perfeito.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gem service-icon"></i>
+                    <h3>Materiais e ferragens premium</h3>
+                    <p>Usamos MDF de alta resistência, fitas de borda de qualidade e ferragens com amortecedores para abrir e fechar em silêncio por muitos anos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-people-carry-box service-icon"></i>
+                    <h3>Montagem limpa e garantida</h3>
+                    <p>Equipe própria, instalação organizada, proteção do local e garantia estendida em toda a marcenaria.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -963,9 +763,11 @@
                 <div class="about-text">
                     <h3>Sobre a Comstilo</h3>
                     <p>Com mais de uma década de experiência, transformamos sonhos em móveis planejados de alto padrão em São Francisco do Sul e região. Cada projeto nasce de um diálogo próximo, alinhando estética e funcionalidade.</p>
-                    <p><i class="fas fa-check-circle" style="color:var(--primary);"></i> Acompanhamento do projeto 3D à instalação<br>
-                    <i class="fas fa-check-circle" style="color:var(--primary);"></i> Materiais certificados e durabilidade garantida<br>
-                    <i class="fas fa-check-circle" style="color:var(--primary);"></i> Equipe própria e pós-venda dedicado</p>
+                    <p>
+                        <i class="fas fa-check-circle" style="color:var(--primary);"></i> Acompanhamento do projeto 3D à instalação<br>
+                        <i class="fas fa-check-circle" style="color:var(--primary);"></i> Materiais certificados e durabilidade garantida<br>
+                        <i class="fas fa-check-circle" style="color:var(--primary);"></i> Equipe própria e pós-venda dedicado
+                    </p>
                 </div>
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=900&auto=format" alt="Marcenaria Comstilo" loading="lazy">
@@ -993,11 +795,25 @@
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
-                        <div class="form-group"><label>Nome *</label><input type="text" id="nome" placeholder="Seu nome" required></div>
-                        <div class="form-group"><label>E-mail *</label><input type="email" id="email" placeholder="exemplo@email.com" required></div>
-                        <div class="form-group"><label>WhatsApp / Telefone</label><input type="tel" id="telefone" placeholder="(47) 99676-7285"></div>
-                        <div class="form-group"><label>Mensagem *</label><textarea id="mensagem" rows="3" placeholder="Descreva o ambiente ou móvel desejado" required></textarea></div>
-                        <button type="submit" class="btn-primary btn-submit">Enviar via WhatsApp <i class="fab fa-whatsapp"></i></button>
+                        <div class="form-group">
+                            <label>Nome *</label>
+                            <input type="text" id="nome" placeholder="Como podemos te chamar?" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail *</label>
+                            <input type="email" id="email" placeholder="Seu melhor e-mail para contato" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp / Telefone</label>
+                            <input type="tel" id="telefone" placeholder="(47) 9 9676-7285">
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem *</label>
+                            <textarea id="mensagem" rows="3" placeholder="Ex.: Cozinha em L com torre quente e espaço para lava-louças" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-submit">
+                            Enviar resumo do projeto no WhatsApp <i class="fab fa-whatsapp"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1008,47 +824,77 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <div><h3>Comstilo Móveis</h3><p>Móveis planejados com personalidade e qualidade premium.</p></div>
-            <div><h4>Contato</h4><p><i class="fas fa-phone"></i> (47) 99676-7285<br><i class="fas fa-envelope"></i> comstilomoveis@gmail.com</p></div>
-            <div><h4>Redes</h4><div class="social-links"><a href="https://www.instagram.com/comstilo_msm/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/5547996767285" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
+            <div>
+                <h3>Comstilo Móveis</h3>
+                <p>Móveis planejados com personalidade e qualidade premium.</p>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> (47) 99676-7285<br><i class="fas fa-envelope"></i> comstilomoveis@gmail.com</p>
+            </div>
+            <div>
+                <h4>Redes</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/comstilo_msm/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5547996767285" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
         <p style="text-align:center;">&copy; 2026 Comstilo Móveis Sob Medida – Todos os direitos reservados.</p>
     </div>
 </footer>
 
-<a href="https://wa.me/5547996767285?text=Olá!%20Quero%20um%20orçamento%20de%20móveis%20planejados%20em%20São%20Francisco%20do%20Sul." class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/5547996767285?text=Olá!%20Quero%20um%20orçamento%20de%20móveis%20planejados%20em%20São%20Francisco%20do%20Sul." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
     // Projetos com imagens locais e externas
     const projetos = [
-        { img: "Img/Projetos/Cozinha.jpg", title: "Cozinha planejada", desc: "Design clean com aproveitamento total do espaço", category: "Cozinhas" },
-        { img: "Img/Projetos/Cozinha_2.jpg", title: "Cozinha funcional", desc: "Integrada e nichos sob medida", category: "Cozinhas" },
+        { img: "Img/Projetos/Cozinha.jpg",   title: "Cozinha planejada",             desc: "Design clean com aproveitamento total do espaço",           category: "Cozinhas" },
+        { img: "Img/Projetos/Cozinha_2.jpg", title: "Cozinha funcional",            desc: "Ambiente integrado com nichos sob medida",                category: "Cozinhas" },
         { img: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&auto=format", title: "Cozinha integrada à sala", desc: "Ambiente fluido e armazenamento inteligente", category: "Cozinhas" },
-        { img: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&auto=format", title: "Cozinha com torre quente", desc: "Eletrodomésticos embutidos e ergonomia", category: "Cozinhas" },
-        { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&auto=format", title: "Cozinha com bancada em destaque", desc: "Acabamento sofisticado e iluminação planejada", category: "Cozinhas" },
-        { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format", title: "Cozinha compacta", desc: "Solução otimizada para espaços reduzidos", category: "Cozinhas" },
-        { img: "https://images.unsplash.com/photo-1600607687920-4e2a0cfb2b0e?w=1200&auto=format", title: "Cozinha amadeirada", desc: "Toque acolhedor e design atemporal", category: "Cozinhas" }
+        { img: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&auto=format", title: "Cozinha com torre quente", desc: "Eletrodomésticos embutidos e ergonomia",       category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&auto=format",   title: "Cozinha com bancada em destaque", desc: "Acabamento sofisticado e iluminação planejada", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format", title: "Cozinha compacta", desc: "Solução otimizada para espaços reduzidos",       category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600607687920-4e2a0cfb2b0e?w=1200&auto=format", title: "Cozinha amadeirada", desc: "Toque acolhedor e design atemporal",             category: "Cozinhas" }
     ];
 
     const testimonials = [
-        { name: "Felipe Mendonça", text: "Atendimento impecável e acabamento de alto nível. A cozinha superou as expectativas!", photo: "https://randomuser.me/api/portraits/men/32.jpg", stars: 5 },
-        { name: "Marina Borges", text: "Fizemos closet e home office, equipe organizada e prazo cumprido. Recomendo demais.", photo: "https://randomuser.me/api/portraits/women/68.jpg", stars: 5 },
-        { name: "Carlos Alberto", text: "Soluções criativas que aproveitaram cada canto da sala. Projeto 3D fiel à entrega.", photo: "https://randomuser.me/api/portraits/men/22.jpg", stars: 5 }
+        {
+            name: "Felipe Mendonça",
+            text: "A Comstilo cuidou de tudo: projeto, prazos e instalação. A cozinha ficou exatamente como no 3D, com acabamento impecável.",
+            photo: "https://randomuser.me/api/portraits/men/32.jpg",
+            stars: 5
+        },
+        {
+            name: "Marina Borges",
+            text: "Fiz closet e home office. Gostei muito do atendimento, das sugestões técnicas e da organização no dia da montagem.",
+            photo: "https://randomuser.me/api/portraits/women/68.jpg",
+            stars: 5
+        },
+        {
+            name: "Carlos Alberto",
+            text: "Aproveitaram cada centímetro da sala. O resultado ficou moderno, funcional e valorizou muito o apartamento.",
+            photo: "https://randomuser.me/api/portraits/men/22.jpg",
+            stars: 5
+        }
     ];
 
     let currentIndex = 0;
     let slideInterval;
     const slidesContainer = document.getElementById('carouselSlides');
-    const dotsContainer = document.getElementById('carouselDots');
+    const dotsContainer  = document.getElementById('carouselDots');
 
     function buildCarousel() {
         slidesContainer.innerHTML = '';
-        dotsContainer.innerHTML = '';
+        dotsContainer.innerHTML  = '';
         projetos.forEach((proj, idx) => {
             const slide = document.createElement('div');
             slide.className = 'carousel-slide';
             slide.innerHTML = `
-                <img src="${proj.img}" alt="${proj.title}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800?text=Comstilo+Projeto'">
+                <img src="${proj.img}" alt="${proj.title}" loading="lazy"
+                     onerror="this.onerror=null;this.src='https://placehold.co/1200x800?text=Comstilo+Projeto';">
                 <div class="carousel-caption">
                     <h3>${proj.title}</h3>
                     <p>${proj.desc}</p>
@@ -1056,6 +902,7 @@
                 </div>
             `;
             slidesContainer.appendChild(slide);
+
             const dot = document.createElement('span');
             dot.className = 'dot';
             dot.addEventListener('click', () => goToSlide(idx));
@@ -1095,9 +942,15 @@
         const card = document.createElement('div');
         card.className = 'testimonial-card';
         let starHtml = '';
-        for (let i=0; i<t.stars; i++) starHtml += '<i class="fas fa-star"></i>';
+        for (let i = 0; i < t.stars; i++) starHtml += '<i class="fas fa-star"></i>';
         card.innerHTML = `
-            <div class="testimonial-header"><img src="${t.photo}" alt="${t.name}" class="testimonial-avatar"><div class="testimonial-info"><h4>${t.name}</h4><div class="stars">${starHtml}</div></div></div>
+            <div class="testimonial-header">
+                <img src="${t.photo}" alt="${t.name}" class="testimonial-avatar">
+                <div class="testimonial-info">
+                    <h4>${t.name}</h4>
+                    <div class="stars">${starHtml}</div>
+                </div>
+            </div>
             <p class="testimonial-text">“${t.text}”</p>
         `;
         testimonialsGrid.appendChild(card);
@@ -1105,7 +958,7 @@
 
     // Mobile menu
     const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navLinks   = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     document.querySelectorAll('.nav-link, .btn-nav-primary').forEach(link => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
@@ -1130,7 +983,10 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
@@ -1138,16 +994,16 @@
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefone = document.getElementById('telefone').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
+        const nome      = document.getElementById('nome').value.trim();
+        const email     = document.getElementById('email').value.trim();
+        const telefone  = document.getElementById('telefone').value.trim();
+        const mensagem  = document.getElementById('mensagem').value.trim();
         if (!nome || !email || !mensagem) {
             alert('Por favor, preencha nome, e-mail e mensagem.');
             return;
         }
         const texto = `Olá, sou ${nome}%0AEmail: ${email}%0ATelefone: ${telefone || 'não informado'}%0A%0AMensagem: ${mensagem}`;
-        const url = `https://wa.me/5547996767285?text=${texto}`;
+        const url   = `https://wa.me/5547996767285?text=${texto}`;
         window.open(url, '_blank');
         contactForm.reset();
         alert('Redirecionando para o WhatsApp! Em breve nossa equipe responderá.');
