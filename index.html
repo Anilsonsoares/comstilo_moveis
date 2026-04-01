@@ -324,10 +324,12 @@
             transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-        }
+        .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
         .carousel-slide img {
     height: 480px;
