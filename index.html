@@ -317,25 +317,36 @@
             overflow: hidden;
             box-shadow: var(--shadow-md);
             background: #1e1a17;
-        }
+           }
 
-        .carousel-slides {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
         }
 
         .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
 
-        .carousel-slide img {
-    height: 480px;
-    object-fit: cover;
-    max-height: 600px; /* opcional, limita altura máxima */
-}
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+        }
+
+        .carousel-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+
 
         .carousel-caption {
             position: absolute;
