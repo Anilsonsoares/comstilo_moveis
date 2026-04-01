@@ -311,46 +311,273 @@
         }
 
         /* Carousel */
-        .carousel-container {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            background: transparent; /* Remove o fundo preto */
-        }
+        /* Carrossel refinado */
+.carousel-container {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+    background: #FEFAF6; /* fundo suave, sem bordas pretas */
+}
 
-        .carousel-slides {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
+.carousel-slides {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-        }
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
 
-        .carousel-slide img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            display: block;
-        }
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
 
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-            padding: 2rem 2rem 1.5rem;
-            color: white;
-        }
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    padding: 2rem 2rem 1.5rem;
+    color: white;
+    text-align: left;
+}
 
-        .carousel-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        }
+.carousel-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
 
+.carousel-caption p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.badge-cat {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    margin-top: 8px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.btn-prev { left: 20px; }
+.btn-next { right: 20px; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(192,125,75,0.4);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dot.active {
+    width: 28px;
+    background: var(--primary);
+}
+
+/* Responsivo */
+@media (max-width: 880px) {
+    .carousel-slide img {
+        height: 350px;
+    }
+    .carousel-caption h3 {
+        font-size: 1.3rem;
+    }
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .carousel-slide img {
+        height: 280px;
+    }
+    .carousel-caption {
+        padding: 1rem;
+    }
+    .carousel-caption h3 {
+        font-size: 1rem;
+    }
+}/* Carrossel refinado */
+.carousel-container {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+    background: #FEFAF6; /* fundo suave, sem bordas pretas */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    padding: 2rem 2rem 1.5rem;
+    color: white;
+    text-align: left;
+}
+
+.carousel-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.carousel-caption p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.badge-cat {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    margin-top: 8px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.btn-prev { left: 20px; }
+.btn-next { right: 20px; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(192,125,75,0.4);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dot.active {
+    width: 28px;
+    background: var(--primary);
+}
+
+/* Responsivo */
+@media (max-width: 880px) {
+    .carousel-slide img {
+        height: 350px;
+    }
+    .carousel-caption h3 {
+        font-size: 1.3rem;
+    }
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .carousel-slide img {
+        height: 280px;
+    }
+    .carousel-caption {
+        padding: 1rem;
+    }
+    .carousel-caption h3 {
+        font-size: 1rem;
+    }
+}
         .badge-cat {
             display: inline-block;
             background: rgba(255,255,255,0.2);
