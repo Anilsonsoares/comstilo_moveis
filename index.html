@@ -316,8 +316,13 @@
             border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            background: #1e1a17;
-           }
+            background: transparent; /* Remove o fundo preto */
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
 
         .carousel-slide {
             min-width: 100%;
@@ -330,23 +335,6 @@
             object-fit: cover;
             display: block;
         }
-
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-            padding: 2rem 2rem 1.5rem;
-            color: white;
-        }
-
-        .carousel-caption h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        }
-
-
 
         .carousel-caption {
             position: absolute;
@@ -804,16 +792,16 @@
 <a href="https://wa.me/5547996767285?text=Olá!%20Quero%20um%20orçamento%20de%20móveis%20planejados%20em%20São%20Francisco%20do%20Sul." class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    // Projetos com imagens externas (Unsplash) para evitar erros de arquivo local
+    // Projetos com imagens locais e externas
     const projetos = [
-    { img: "Img/Projetos/Cozinha.jpg", title: "Cozinha planejada", desc: "Design clean com aproveitamento total do espaço", category: "Cozinhas" },
-    { img: "Img/Projetos/Cozinha_2.jpg", title: "Cozinha funcional", desc: "Integrada e nichos sob medida", category: "Cozinhas" },
-    { img: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&auto=format", title: "Cozinha integrada à sala", desc: "Ambiente fluido e armazenamento inteligente", category: "Cozinhas" },
-    { img: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&auto=format", title: "Cozinha com torre quente", desc: "Eletrodomésticos embutidos e ergonomia", category: "Cozinhas" },
-    { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&auto=format", title: "Cozinha com bancada em destaque", desc: "Acabamento sofisticado e iluminação planejada", category: "Cozinhas" },
-    { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format", title: "Cozinha compacta", desc: "Solução otimizada para espaços reduzidos", category: "Cozinhas" },
-    { img: "https://images.unsplash.com/photo-1600607687920-4e2a0cfb2b0e?w=1200&auto=format", title: "Cozinha amadeirada", desc: "Toque acolhedor e design atemporal", category: "Cozinhas" }
-];
+        { img: "Img/Projetos/Cozinha.jpg", title: "Cozinha planejada", desc: "Design clean com aproveitamento total do espaço", category: "Cozinhas" },
+        { img: "Img/Projetos/Cozinha_2.jpg", title: "Cozinha funcional", desc: "Integrada e nichos sob medida", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&auto=format", title: "Cozinha integrada à sala", desc: "Ambiente fluido e armazenamento inteligente", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&auto=format", title: "Cozinha com torre quente", desc: "Eletrodomésticos embutidos e ergonomia", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&auto=format", title: "Cozinha com bancada em destaque", desc: "Acabamento sofisticado e iluminação planejada", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format", title: "Cozinha compacta", desc: "Solução otimizada para espaços reduzidos", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600607687920-4e2a0cfb2b0e?w=1200&auto=format", title: "Cozinha amadeirada", desc: "Toque acolhedor e design atemporal", category: "Cozinhas" }
+    ];
 
     const testimonials = [
         { name: "Felipe Mendonça", text: "Atendimento impecável e acabamento de alto nível. A cozinha superou as expectativas!", photo: "https://randomuser.me/api/portraits/men/32.jpg", stars: 5 },
@@ -919,7 +907,7 @@
         });
     });
 
-    // Form submit via WhatsApp (lead generation)
+    // Form submit via WhatsApp
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
