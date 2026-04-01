@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Comstilo Móveis Sob Medida | São Francisco do Sul - SC</title>
+    <meta name="description" content="Móveis sob medida em São Francisco do Sul - SC. Projetos personalizados de cozinhas, quartos, salas e home office com acabamento de alto padrão. Solicite seu orçamento agora.">
+    <meta name="theme-color" content="#C07D4B">
+    
+    <!-- Google Fonts + Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #C07D4B;
+            --primary-dark: #9C5E32;
+            --secondary: #EBDBCB;
+            --accent-gold: #CBA45E;
+            --dark-bg: #2F2A27;
+            --light-bg: #F9F5F0;
+            --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.05);
+            --shadow-md: 0 20px 40px -12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 30px 60px -15px rgba(0,0,0,0.15);
+            --radius-lg: 28px;
+            --radius-md: 20px;
+            --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #FFFCF8;
+            color: #2E2A27;
+            line-height: 1.5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 252, 248, 0.96);
+            backdrop-filter: blur(16px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(192, 125, 75, 0.15);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 252, 248, 0.98);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: var(--primary-dark);
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, var(--primary), var(--accent-gold));
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 12px rgba(192,125,75,0.25);
+        }
+
+        .logo-text {
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #7a5a44;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #3A2E28;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn-nav-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white !important;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            box-shadow: 0 5px 15px rgba(192,125,75,0.3);
+        }
+
+        .btn-nav-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(192,125,75,0.4);
+        }
+
+        .btn-nav-primary::after {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(115deg, rgba(46,42,39,0.85) 0%, rgba(192,125,75,0.8) 100%), url('https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1920&auto=format') center/cover fixed;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 85px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 6vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(192,125,75,0.4);
+        }
+
+        /* Stats */
+        .stats-section {
+            background: white;
+            padding: 3.5rem 0;
+            position: relative;
+            border-bottom: 1px solid #f0e4d8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent-gold));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #2E2A27, var(--primary-dark));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: #7f6b5c;
+            max-width: 620px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Services Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.2rem 1.8rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(235, 219, 203, 0.6);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Carousel */
+        .carousel-container {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: #1e1a17;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+        }
+
+        .carousel-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .badge-cat {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(6px);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .btn-prev { left: 20px; }
+        .btn-next { right: 20px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(192,125,75,0.4);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .dot.active {
+            width: 28px;
+            background: var(--primary);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #f0e4d8;
+            transition: 0.2s;
+        }
+
+        .testimonial-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .stars i {
+            color: #F4B836;
+            font-size: 0.85rem;
+        }
+
+        /* About */
+        .about-section {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 0.8rem;
+            color: #4a3a30;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: flex;
+            gap: 2.5rem;
+            background: white;
+            border-radius: 32px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            width: 28px;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            display: block;
+            color: #4a3a30;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 28px;
+            border: 1px solid #e2cfc0;
+            background: #FFFCF8;
+            font-family: inherit;
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(192,125,75,0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: #CFC2B6;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: #CFC2B6;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+            z-index: 999;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.07);
+            background: #20b859;
+        }
+
+        /* Responsive */
+        @media (max-width: 880px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -280px;
+                width: 260px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 6rem 2rem;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                transition: 0.3s ease;
+                gap: 1.8rem;
+                z-index: 999;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .carousel-slide img {
+                height: 320px;
+            }
+            .contact-grid {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .carousel-caption h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <div class="logo-icon"><i class="fas fa-couch"></i></div>
+            <div class="logo-text">Comstilo<span>móveis sob medida</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link">Início</a></li>
+            <li><a href="#projetos" class="nav-link">Projetos</a></li>
+            <li><a href="#servicos" class="nav-link">Serviços</a></li>
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#contato" class="btn-nav-primary">Orçamento</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Móveis que contam <strong>sua história</strong></h1>
+            <p>Design exclusivo, marcenaria de alta performance e acabamento premium. Transforme sua casa com móveis planejados em São Francisco do Sul - SC.</p>
+            <a href="https://wa.me/5547996767285?text=Olá!%20Quero%20móveis%20sob%20medida%20em%20São%20Francisco%20do%20Sul." target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item"><h3>+520</h3><p>Projetos entregues</p></div>
+                <div class="stat-item"><h3>4.9★</h3><p>Satisfação garantida</p></div>
+                <div class="stat-item"><h3>12 anos</h3><p>Experiência</p></div>
+                <div class="stat-item"><h3>10 anos</h3><p>Garantia de fábrica</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Excelência em cada detalhe</h2>
+                <p class="section-subtitle">Atendimento personalizado e móveis que valorizam cada ambiente</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-drafting-compass service-icon"></i><h3>Projeto 3D personalizado</h3><p>Cada móvel desenhado sob medida para sua rotina e estilo.</p></div>
+                <div class="service-card"><i class="fas fa-gem service-icon"></i><h3>Materiais nobres</h3><p>MDF premium, ferragens Blum e acabamento de alto padrão.</p></div>
+                <div class="service-card"><i class="fas fa-people-carry-box service-icon"></i><h3>Montagem especializada</h3><p>Instalação cuidadosa, limpeza e entrega no prazo.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" style="background:#FEFAF6;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projetos que inspiram</h2>
+                <p class="section-subtitle">Ambientes repletos de funcionalidade e sofisticação</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carouselSlides"></div>
+                <button class="carousel-btn btn-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn btn-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que nossos clientes dizem</h2>
+                <p class="section-subtitle">Experiências reais de quem já confiou na Comstilo</p>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid"></div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Artesanato, tecnologia e cuidado</h2>
+                <p class="section-subtitle">União de técnicas tradicionais com inovação</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Sobre a Comstilo</h3>
+                    <p>Com mais de uma década de experiência, transformamos sonhos em móveis planejados de alto padrão em São Francisco do Sul e região. Cada projeto nasce de um diálogo próximo, alinhando estética e funcionalidade.</p>
+                    <p><i class="fas fa-check-circle" style="color:var(--primary);"></i> Acompanhamento do projeto 3D à instalação<br>
+                    <i class="fas fa-check-circle" style="color:var(--primary);"></i> Materiais certificados e durabilidade garantida<br>
+                    <i class="fas fa-check-circle" style="color:var(--primary);"></i> Equipe própria e pós-venda dedicado</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=900&auto=format" alt="Marcenaria Comstilo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solicite seu orçamento</h2>
+                <p class="section-subtitle">Conte sua ideia e receba uma proposta personalizada</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>São Francisco do Sul, SC – atendemos toda região norte catarinense.</span></div>
+                    <div class="info-item"><i class="fas fa-phone-alt"></i><span>(47) 99676-7285</span></div>
+                    <div class="info-item"><i class="fas fa-envelope"></i><span>comstilomoveis@gmail.com</span></div>
+                    <div class="info-item"><i class="fab fa-whatsapp"></i><span>Atendimento rápido via WhatsApp</span></div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/comstilo_msm/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5547996767285" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group"><label>Nome *</label><input type="text" id="nome" placeholder="Seu nome" required></div>
+                        <div class="form-group"><label>E-mail *</label><input type="email" id="email" placeholder="exemplo@email.com" required></div>
+                        <div class="form-group"><label>WhatsApp / Telefone</label><input type="tel" id="telefone" placeholder="(47) 99676-7285"></div>
+                        <div class="form-group"><label>Mensagem *</label><textarea id="mensagem" rows="3" placeholder="Descreva o ambiente ou móvel desejado" required></textarea></div>
+                        <button type="submit" class="btn-primary btn-submit">Enviar via WhatsApp <i class="fab fa-whatsapp"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div><h3>Comstilo Móveis</h3><p>Móveis planejados com personalidade e qualidade premium.</p></div>
+            <div><h4>Contato</h4><p><i class="fas fa-phone"></i> (47) 99676-7285<br><i class="fas fa-envelope"></i> comstilomoveis@gmail.com</p></div>
+            <div><h4>Redes</h4><div class="social-links"><a href="https://www.instagram.com/comstilo_msm/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/5547996767285" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
+        </div>
+        <p style="text-align:center;">&copy; 2026 Comstilo Móveis Sob Medida – Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/5547996767285?text=Olá!%20Quero%20um%20orçamento%20de%20móveis%20planejados%20em%20São%20Francisco%20do%20Sul." class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // Projetos com imagens externas (Unsplash) para evitar erros de arquivo local
+    const projetos = [
+        { img: "https://images.unsplash.com/photo-1556911220-bda9e5b3c5c4?w=1200&auto=format", title: "Cozinha planejada contemporânea", desc: "Design clean com aproveitamento total do espaço", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200&auto=format", title: "Home office funcional", desc: "Estação de trabalho integrada e nichos sob medida", category: "Home Office" },
+        { img: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&auto=format", title: "Cozinha integrada à sala", desc: "Ambiente fluido e armazenamento inteligente", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=1200&auto=format", title: "Cozinha com torre quente", desc: "Eletrodomésticos embutidos e ergonomia", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&auto=format", title: "Cozinha com bancada em destaque", desc: "Acabamento sofisticado e iluminação planejada", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format", title: "Cozinha compacta", desc: "Solução otimizada para espaços reduzidos", category: "Cozinhas" },
+        { img: "https://images.unsplash.com/photo-1600607687920-4e2a0cfb2b0e?w=1200&auto=format", title: "Cozinha amadeirada", desc: "Toque acolhedor e design atemporal", category: "Cozinhas" }
+    ];
+
+    const testimonials = [
+        { name: "Felipe Mendonça", text: "Atendimento impecável e acabamento de alto nível. A cozinha superou as expectativas!", photo: "https://randomuser.me/api/portraits/men/32.jpg", stars: 5 },
+        { name: "Marina Borges", text: "Fizemos closet e home office, equipe organizada e prazo cumprido. Recomendo demais.", photo: "https://randomuser.me/api/portraits/women/68.jpg", stars: 5 },
+        { name: "Carlos Alberto", text: "Soluções criativas que aproveitaram cada canto da sala. Projeto 3D fiel à entrega.", photo: "https://randomuser.me/api/portraits/men/22.jpg", stars: 5 }
+    ];
+
+    let currentIndex = 0;
+    let slideInterval;
+    const slidesContainer = document.getElementById('carouselSlides');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    function buildCarousel() {
+        slidesContainer.innerHTML = '';
+        dotsContainer.innerHTML = '';
+        projetos.forEach((proj, idx) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            slide.innerHTML = `
+                <img src="${proj.img}" alt="${proj.title}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800?text=Comstilo+Projeto'">
+                <div class="carousel-caption">
+                    <h3>${proj.title}</h3>
+                    <p>${proj.desc}</p>
+                    <span class="badge-cat">${proj.category}</span>
+                </div>
+            `;
+            slidesContainer.appendChild(slide);
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.addEventListener('click', () => goToSlide(idx));
+            dotsContainer.appendChild(dot);
+        });
+        updateDots();
+    }
+
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        const total = projetos.length;
+        currentIndex = (index + total) % total;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+        resetInterval();
+    }
+
+    function nextSlide() { goToSlide(currentIndex + 1); }
+    function prevSlide() { goToSlide(currentIndex - 1); }
+    function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 5500); }
+
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    buildCarousel();
+    goToSlide(0);
+    resetInterval();
+
+    // Testimonials
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    testimonials.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        let starHtml = '';
+        for (let i=0; i<t.stars; i++) starHtml += '<i class="fas fa-star"></i>';
+        card.innerHTML = `
+            <div class="testimonial-header"><img src="${t.photo}" alt="${t.name}" class="testimonial-avatar"><div class="testimonial-info"><h4>${t.name}</h4><div class="stars">${starHtml}</div></div></div>
+            <p class="testimonial-text">“${t.text}”</p>
+        `;
+        testimonialsGrid.appendChild(card);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-link, .btn-nav-primary').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // Scroll header effect + active section highlight
+    window.addEventListener('scroll', () => {
+        document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+        const sections = document.querySelectorAll('section[id]');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (scrollY >= sectionTop) current = section.getAttribute('id');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    // Form submit via WhatsApp (lead generation)
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+        if (!nome || !email || !mensagem) {
+            alert('Por favor, preencha nome, e-mail e mensagem.');
+            return;
+        }
+        const texto = `Olá, sou ${nome}%0AEmail: ${email}%0ATelefone: ${telefone || 'não informado'}%0A%0AMensagem: ${mensagem}`;
+        const url = `https://wa.me/5547996767285?text=${texto}`;
+        window.open(url, '_blank');
+        contactForm.reset();
+        alert('Redirecionando para o WhatsApp! Em breve nossa equipe responderá.');
+    });
+</script>
+</body>
+</html>
